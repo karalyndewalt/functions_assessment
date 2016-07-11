@@ -13,7 +13,13 @@
 #    including tax.
 
 #    If the user does not provide a tax rate it should default to 5% 
-
+# 7:50pm start
+def tax_calculator(state, item_cost, tax_percentage = 0.05):
+    if state == 'CA':
+      tax_percentage = 0.07
+    total = item_cost*tax_percentage + item_cost
+    print total
+# 7:57 end
 #####################################################################
 # PART TWO
 
@@ -21,6 +27,15 @@
 #        and returns a boolean if the fruit is a "strawberry", "cherry", or 
 #        "blackberry".
 
+def is_berry(fruit_name):
+  is_true = False
+  if fruit_name in ['strawberry', 'cherry', 'blackberry']:
+    is_true = True
+    print is_true
+  else:
+    print is_true
+# 8:03 end
+# commit
 #    (b) Write another function, shipping_cost(), which calculates shipping cost
 #        by taking a fruit name as a string, calling the `is_berry()` function 
 #        within the `shipping_cost()` function and returns `0` if ``is_berry()
