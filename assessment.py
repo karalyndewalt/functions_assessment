@@ -18,7 +18,7 @@ def tax_calculator(state, item_cost, tax_percentage = 0.05):
     if state == 'CA':
       tax_percentage = 0.07
     total = item_cost*tax_percentage + item_cost
-    print total
+    return total
 # 7:57 end
 #####################################################################
 # PART TWO
@@ -31,28 +31,46 @@ def is_berry(fruit_name):
   is_true = False
   if fruit_name in ['strawberry', 'cherry', 'blackberry']:
     is_true = True
-    print is_true
-  else:
-    print is_true
+  return is_true
 # 8:03 end
 # commit
 #    (b) Write another function, shipping_cost(), which calculates shipping cost
 #        by taking a fruit name as a string, calling the `is_berry()` function 
 #        within the `shipping_cost()` function and returns `0` if ``is_berry()
 #        == True``, and `5` if ``is_berry() == False``.
-
+def shipping_cost(fruit_name):
+  if is_berry(fruit_name) == True:
+    return 0
+  else:
+    return 5
+# 8:08
 # 2. (a) Write a function, `is_hometown()`, which takes a town name as a string
 #        and evaluates to `True` if it is your hometown, and `False` otherwise.
 #
+def is_hometown(town_name):
+  is_home = False
+  if town_name in ['San Jose', 'San Francisco', 'Cupertino']:
+    is_home = True
+  return is_home
+# 8:10
 #    (b) Write a function, `full_name()`, which takes a first and last name as
 #        arguments as strings and returns the concatenation of the two names in
 #        one string.
-#
+def full_name(first_name, last_name):
+  return first_name + ' ' + last_name
 #    (c) Write a function, `hometown_greeting()`, which takes a home town, a
 #        first name, and a last name as strings as arguments, calls both
 #        `is_hometown()` and `full_name()` and prints "Hi, 'full name here',
 #        we're from the same place!", or "Hi 'full name here', where are you 
 #        from?" depending on what `is_hometown()` evaluates to.
+def hometown_greeting(hometown_name, first_name, last_name):
+  if is_hometown(hometown_name) == True:
+    print "Hi " + full_name(first_name, last_name) + ", we're from the same place!"
+  else:
+    print "Hi " + full_name(first_name, last_name) + ", where are you from?"
+# 8:18
+
+
 
 #####################################################################
 
